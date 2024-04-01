@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TextVault
+
+TextVault is a simple, open-source text sharing web application built using Next.js. It allows you to easily share text data with others by generating a unique URL that can be accessed from any web browser.
+
+## Features
+
+* Share text data with others by generating a unique URL
+* Clean and simple user interface
+* Built using Next.js for fast and reliable performance
 
 ## Getting Started
 
-First, run the development server:
+To get started with TextVault, follow these steps:
 
+1. Clone the repository to your local machine:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/textvault.git
 ```
+2. Install the required dependencies:
+```
+npm install
+```
+3. Start the development server:
+```
+npm run dev
+```
+4. Open your web browser and navigate to `http://localhost:3000` to start using TextVault.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Current Limitations
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Please note that TextVault is currently in its initial release (version 0.1) and does not yet include all of the planned features, such as:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+* Password protection for shared text data
+* Automatic link expiration
+* Client-side encryption for enhanced security
 
-## Learn More
+These features will be added in future releases as the project continues to evolve.
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+TextVault is an open-source project, and contributions from the community are welcome! If you would like to contribute to the project, please submit a pull request with your proposed changes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+TextVault is licensed under the MIT License. See the `LICENSE` file for more information.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Acknowledgements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+TextVault was inspired by other text sharing services such as Pastebin and Rentry, and built using the Next.js framework. Special thanks to the creators and maintainers of these projects for their inspiration and support.
