@@ -16,7 +16,7 @@ To get started with TextVault, follow these steps:
 
 1. Clone the repository to your local machine:
 ```bash
-git clone https://github.com/yourusername/textvault.git
+git clone https://github.com/VenkatLohithDasari/textvault.git
 ```
 2. Install the required dependencies:
 ```
