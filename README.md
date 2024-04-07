@@ -1,10 +1,12 @@
 # TextVault
 
-TextVault is a simple, open-source text sharing web application built using Next.js. It allows you to easily share text data with others by generating a unique URL that can be accessed from any web browser.
+TextVault is a simple, open-source text sharing web application built using Next.js. It allows you to easily share text data with others by generating a unique URL that can be accessed from any web browser. TextVault now includes password protection and client-side encryption for enhanced security.
 
 ## Features
 
 * Share text data with others by generating a unique URL
+* Password protection for shared text data
+* Client-side encryption for enhanced security
 * Clean and simple user interface
 * Built using Next.js for fast and reliable performance
 
@@ -26,15 +28,24 @@ npm run dev
 ```
 4. Open your web browser and navigate to `http://localhost:3000` to start using TextVault.
 
-## Current Limitations
+## Password Protection
 
-Please note that TextVault is currently in its initial release (version 0.1) and does not yet include all of the planned features, such as:
+TextVault now supports password protection for shared text data. When creating a new text entry, you have the option to set a password. If a password is provided, the shared text will be encrypted using the password, and anyone accessing the URL will be required to enter the correct password to view the content.
 
-* Password protection for shared text data
+## Client-Side Encryption
+
+In addition to password protection, TextVault implements client-side encryption for enhanced security. When a password is set for a text entry, the content is encrypted using the password on the client-side before being sent to the server. This ensures that the content remains secure and can only be decrypted by someone with the correct password.
+
+## Upcoming Features
+
+TextVault is actively being developed, and the following features are planned for future releases:
+
 * Automatic link expiration
-* Client-side encryption for enhanced security
+* Customizable link expiration times
+* Syntax highlighting for code snippets
+* Improved user interface and user experience
 
-These features will be added in future releases as the project continues to evolve.
+Stay tuned for updates and new features!
 
 ## Contributing
 

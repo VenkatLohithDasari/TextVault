@@ -8,6 +8,7 @@ export async function addText(formData: FormData) {
 
     let title = formData.get("title");
     let content = formData.get("content");
+    let passwordHash = formData.get("passwordHash");
 
     if (!content) {
         return {status: 400, message: "No content"}
@@ -16,7 +17,8 @@ export async function addText(formData: FormData) {
     let data = {
         cid: crypto.randomUUID(),
         title: title ? title.toString() : undefined,
-        content: content.toString()
+        content: content.toString(),
+        passwordHash: passwordHash ? passwordHash.toString() : undefined
     }
 
     const ContentDoc = await ContentModel.create(data);

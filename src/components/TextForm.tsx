@@ -5,10 +5,13 @@ import {Button} from "@nextui-org/button";
 import {useState} from "react";
 import {useRouter} from "next/navigation";
 import {Chip} from "@nextui-org/chip";
+import {Accordion, AccordionItem} from "@nextui-org/accordion";
+import {hashPassword, encryptContent} from "@/lib/EncryptorAndHasher";
 
 interface FormData {
     title: string;
     content: string;
+    password: string;
 }
 
 export const TextForm = () => {
@@ -20,6 +23,7 @@ export const TextForm = () => {
     const [formData, setFormData] = useState<FormData>({
         title: "",
         content: "",
+        password: "",
     })
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -30,7 +34,18 @@ export const TextForm = () => {
         const fd = new FormData();
 
         fd.append("title", formData.title);
-        fd.append("content", formData.content);
+
+        if (formData.password) {
+
+            const encryptedContent = await encryptContent(formData.content, formData.password);
+            fd.append("content", encryptedContent);
+
+            const hashedPassword = await hashPassword(formData.password);
+            fd.append("passwordHash", hashedPassword);
+
+        } else {
+            fd.append("content", formData.content);
+        }
 
         const response = await addText(fd);
 
@@ -86,6 +101,20 @@ export const TextForm = () => {
                 />
                 {!formData.content && <p id="content-error">Please enter some content</p>}
             </div>
+            <Accordion isCompact className="px-0">
+                <AccordionItem key="1" aria-label="Advanced Options" title="Advanced Options">
+                    <Input
+                        variant="faded"
+                        type="text"
+                        id="password"
+                        name="password"
+                        label="Set Password (Optional)"
+                        onChange={handleInputChange}
+                        value={formData.password}
+                        autoComplete="off"
+                    />
+                </AccordionItem>
+            </Accordion>
             <div className="flex justify-end">
                 <Button type="submit" color="primary" isDisabled={!formData.content} isLoading={isLoading}>
                     Submit

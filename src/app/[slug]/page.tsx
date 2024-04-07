@@ -2,9 +2,9 @@ import React from 'react'
 import {notFound} from "next/navigation";
 import connectToDB from "@/lib/connectToDB";
 import ContentModel from "@/lib/models/contentModel";
-import Markdown from "react-markdown";
-import remarkGfm from 'remark-gfm'
 import {Metadata, ResolvingMetadata} from "next";
+import {ContentDisplay} from "@/components/ContentDisplay";
+import {Content} from "next/dist/compiled/@next/font/dist/google";
 
 export async function generateMetadata({params}: {params: {slug: string}},
     parent: ResolvingMetadata): Promise<Metadata> {
@@ -52,9 +52,7 @@ const Page = async ({params}: {params: {slug: string}}) => {
                 <h1 className="text-3xl font-bold px-4">{ContentDoc.title}</h1>
                 <hr className="px-4" />
             </>}
-            <Markdown remarkPlugins={[remarkGfm]} className="prose min-w-full border-2 p-4 rounded-lg bg-content2">
-                {ContentDoc.content}
-            </Markdown>
+            <ContentDisplay content={ContentDoc.content} passwordHash={ContentDoc.passwordHash} />
         </div>
     )
 }
