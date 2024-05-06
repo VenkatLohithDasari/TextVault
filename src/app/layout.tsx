@@ -29,7 +29,7 @@ export default function RootLayout({
                 Made with ❤️ by <Link color="primary" href="https://github.com/VenkatLohithDasari">Venky</Link>
               </p>
               <p className="text-sm">
-                <Link color="primary" href="https://github.com/your-username/your-repo">View the source code on GitHub</Link>
+                <Link color="primary" href="https://github.com/VenkatLohithDasari/TextVault">View the source code on GitHub</Link>
               </p>
             </footer>
           </div>
